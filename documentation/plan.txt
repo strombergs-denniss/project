@@ -1,2 +1,0 @@
-Commands:
-    DEBUG=backend:* npm start
