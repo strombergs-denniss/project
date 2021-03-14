@@ -9,6 +9,10 @@ export class Attribute extends Model {
                     primaryKey: true,
                     allowNull: false,
                     autoIncrement: true
+                },
+                code: {
+                    type: DataTypes.STRING,
+                    unique: true
                 }
             },
             {

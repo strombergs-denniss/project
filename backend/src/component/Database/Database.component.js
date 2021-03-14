@@ -11,9 +11,7 @@ import CustomerAddress from '../../model/CustomerAddress.model'
 import Page from '../../model/Page.model'
 import Product from '../../model/Product.model'
 import Review from '../../model/Review.model'
-import { Store, storesField } from '../../model/Store.model'
-import { GraphQLSchema, GraphQLObjectType } from 'graphql'
-
+import Store from '../../model/Store.model'
 class Database {
     constructor() {
         this.connect()
@@ -40,14 +38,6 @@ class Database {
             Review: Review.init(this.sequelize, DataTypes),
             Store: Store.init(this.sequelize, DataTypes)
         }
-        this.schema = new GraphQLSchema({
-            query: new GraphQLObjectType({
-                name: 'RootQueryType',
-                fields: {
-                    stores: storesField
-                }
-            })
-        })
     }
 
     associate() {
